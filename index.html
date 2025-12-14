@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NJ9MPQ9J');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>エコキュート適正価格診断センター | 無料見積もり診断</title>
+    <link rel="icon" href="https://storage.googleapis.com/blog-storage-momori-work/secure_home/icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      
+      /* Logo Font - Helvetica Style */
+      .font-logo {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans JP", sans-serif;
+        letter-spacing: -0.03em;
+        font-weight: 800;
+      }
+      
+      /* Global Animation Utilities */
+      .animate-bounce-slow {
+        animation: bounce 2s infinite;
+      }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+      
+      .delay-100 { animation-delay: 0.1s; }
+      .delay-200 { animation-delay: 0.2s; }
+      .delay-300 { animation-delay: 0.3s; }
+      .delay-500 { animation-delay: 0.5s; }
+
+      /* Reveal on Scroll Class */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Bar Chart Animation */
+      .bar-growth {
+        transform-origin: bottom;
+        transform: scaleY(0);
+        transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .bar-growth.is-active {
+        transform: scaleY(1);
+      }
+
+      /* Blob Animation for Artistic Background */
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+
+      /* Tilt Animation */
+      .animate-tilt {
+        animation: tilt 10s infinite linear;
+      }
+      @keyframes tilt {
+        0%, 50%, 100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(1deg);
+        }
+        75% {
+          transform: rotate(-1deg);
+        }
+      }
+
+      /* Shine Effect */
+      .animate-shine {
+        animation: shine 3s infinite;
+      }
+      @keyframes shine {
+        0% { left: -100%; }
+        20% { left: 100%; }
+        100% { left: 100%; }
+      }
+      
+      /* Keyframes */
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(-5%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Urgent Flash Text */
+      @keyframes flash-text {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+      .animate-flash-text {
+        animation: flash-text 1.5s infinite;
+      }
+
+      /* Button Shake and Glow */
+      @keyframes shake-glow {
+        0%, 100% { transform: rotate(0deg) scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+        5% { transform: rotate(-3deg) scale(1.05); box-shadow: 0 0 20px rgba(6, 199, 85, 0.6); }
+        10% { transform: rotate(3deg) scale(1.05); }
+        15% { transform: rotate(-3deg) scale(1.05); }
+        20% { transform: rotate(3deg) scale(1.05); }
+        25% { transform: rotate(0deg) scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+      }
+      .animate-shake-glow {
+        animation: shake-glow 4s infinite;
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.559.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJ9MPQ9J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"></div>
+  </body>
+</html>
