@@ -8,14 +8,15 @@ const AccordionItem: React.FC<{ question: string; answer: string }> = ({ questio
   return (
     <div className="border-b border-gray-200 last:border-0">
       <button 
-        className="w-full py-4 px-2 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
+        className="w-full py-5 px-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-bold text-gray-800 text-sm md:text-base pr-4">Q. {question}</span>
-        {isOpen ? <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
+        {/* Increased question text size */}
+        <span className="font-bold text-gray-800 text-base md:text-lg pr-4">Q. {question}</span>
+        {isOpen ? <ChevronUp className="w-6 h-6 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-6 h-6 text-gray-400 flex-shrink-0" />}
       </button>
       {isOpen && (
-        <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed bg-gray-50 rounded-b-lg">
+        <div className="px-6 pb-6 text-base md:text-lg text-gray-600 leading-relaxed bg-gray-50 rounded-b-lg">
           {/* Changed to Red */}
           <span className="font-bold text-red-600 mr-2">A.</span>
           {answer}

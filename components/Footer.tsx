@@ -19,22 +19,26 @@ const Footer: React.FC<FooterProps> = ({ onLegalClick, onPrivacyClick, onHomeCli
                  <button onClick={onHomeClick} className="flex items-center gap-3 text-left group transition-transform active:scale-95 duration-200">
                     {/* Logo Image */}
                     <img 
-                      src="https://storage.googleapis.com/blog-storage-momori-work/secure_home/icon.png" 
+                      src="https://storage.googleapis.com/blog-storage-secure-home/images/icon.png" 
                       alt="Logo" 
                       className="h-8 w-8 object-contain flex-shrink-0"
                     />
                     <span className="text-lg md:text-xl font-bold tracking-tight text-white group-hover:text-gray-100 transition-colors">エコキュート適正価格診断センター</span>
                   </button>
-                  <p className="text-xs text-gray-500 pl-11">運営：セキュアホーム</p>
+                  {/* Increased text size from xs to sm */}
+                  <p className="text-sm text-gray-500 pl-11">運営：セキュアホーム</p>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              {/* Increased text size */}
+              <p className="text-gray-400 text-base leading-relaxed">
                 訪問販売による高額被害を未然に防ぎ、エコキュートの適正価格での普及を目指しています。お客様に寄り添った「透明な価格」をご提案します。
               </p>
               <div className="inline-flex items-center gap-3 bg-gray-800/50 px-4 py-3 rounded-lg border border-gray-700/50">
                  <ShieldCheck className="w-5 h-5 text-gray-400" />
                  <div className="flex flex-col">
-                    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">License</span>
-                    <span className="text-xs text-gray-300 font-medium">
+                    {/* Increased text size from xs to sm */}
+                    <span className="text-sm text-gray-500 font-bold uppercase tracking-wider">License</span>
+                    {/* Increased text size */}
+                    <span className="text-sm md:text-base text-gray-300 font-medium">
                         登録電気工事業者 千葉県知事登録 第77731号
                     </span>
                  </div>
@@ -53,8 +57,10 @@ const Footer: React.FC<FooterProps> = ({ onLegalClick, onPrivacyClick, onHomeCli
                             <MapPin className="w-4 h-4 text-gray-400" />
                         </div>
                         <div>
-                            <span className="text-xs font-bold text-gray-500 block mb-0.5">本店</span>
-                            <p className="text-sm text-gray-300 leading-relaxed">
+                            {/* Increased text size from xs to sm */}
+                            <span className="text-sm font-bold text-gray-500 block mb-0.5">本店</span>
+                            {/* Increased text size */}
+                            <p className="text-base text-gray-300 leading-relaxed">
                                 〒160-0022<br/>
                                 東京都新宿区新宿2-8-1<br/>
                                 新宿セブンビル205号
@@ -66,8 +72,10 @@ const Footer: React.FC<FooterProps> = ({ onLegalClick, onPrivacyClick, onHomeCli
                             <MapPin className="w-4 h-4 text-gray-400" />
                         </div>
                         <div>
-                            <span className="text-xs font-bold text-gray-500 block mb-0.5">千葉支店</span>
-                            <p className="text-sm text-gray-300 leading-relaxed">
+                            {/* Increased text size from xs to sm */}
+                            <span className="text-sm font-bold text-gray-500 block mb-0.5">千葉支店</span>
+                            {/* Increased text size */}
+                            <p className="text-base text-gray-300 leading-relaxed">
                                 〒261-0023<br/>
                                 千葉県千葉市美浜区中瀬1-6<br/>
                                 BAY POINT幕張 2階
@@ -79,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ onLegalClick, onPrivacyClick, onHomeCli
           </div>
         </div>
 
-        <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <div className="flex gap-6">
                 <button onClick={onLegalClick} className="hover:text-white transition-all duration-200 active:scale-95 inline-block">特定商取引法に基づく表記</button>
                 <button onClick={onPrivacyClick} className="hover:text-white transition-all duration-200 active:scale-95 inline-block">プライバシーポリシー</button>

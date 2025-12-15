@@ -25,13 +25,15 @@ const Comparison: React.FC = () => {
                 </span>
                 <span className="inline-block">も差が出ることがあります</span>
             </h2>
-            <p className="mt-4 font-bold inline-block px-4 py-1 text-gray-700 bg-transparent relative top-2 text-sm md:text-base">
+            {/* Increased text size */}
+            <p className="mt-4 font-bold inline-block px-4 py-1 text-gray-700 bg-transparent relative top-2 text-base md:text-lg">
                 その差額の正体は…？
             </p>
         </div>
 
         {/* Chart Section */}
-        <div className="relative z-10 bg-gray-50 rounded-t-3xl rounded-b-[3rem] p-6 md:p-12 pt-8 md:pt-24 overflow-visible shadow-inner pb-24 border-t border-gray-200 max-w-4xl mx-auto">
+        {/* Adjusted padding to prevent overlap (pb-32 for mobile, pb-48 for desktop) while keeping it balanced */}
+        <div className="relative z-10 bg-gray-50 rounded-t-3xl rounded-b-[3rem] p-6 md:p-12 pt-8 md:pt-24 overflow-visible shadow-inner pb-32 md:pb-48 border-t border-gray-200 max-w-4xl mx-auto">
             
             <div className="relative flex flex-row gap-4 md:gap-16 items-end justify-center h-auto min-h-[400px]">
                 
@@ -46,8 +48,9 @@ const Comparison: React.FC = () => {
                 <div className="flex-1 max-w-[180px] flex flex-col items-center group relative z-10">
                     {/* Label Area - Increased margin-bottom to mb-16 to prevent overlap with the bubble */}
                     <div className="text-center mb-16 h-16 flex flex-col justify-end">
-                        <span className="font-black text-gray-800 block text-sm md:text-lg whitespace-nowrap bg-gray-200 px-2 py-1 rounded">訪問販売業者</span>
-                        <span className="text-[10px] md:text-xs text-gray-600 block leading-tight mt-1 font-bold">（高額な手数料込み）</span>
+                        <span className="font-black text-gray-800 block text-base md:text-lg whitespace-nowrap bg-gray-200 px-2 py-1 rounded">訪問販売業者</span>
+                        {/* Increased text size from xs to sm */}
+                        <span className="text-sm md:text-sm text-gray-600 block leading-tight mt-1 font-bold">（高額な手数料込み）</span>
                     </div>
                     
                     <div className="relative w-full h-72 md:h-96 flex items-end justify-center">
@@ -62,19 +65,21 @@ const Comparison: React.FC = () => {
                                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(135deg, #000 10%, transparent 10%, transparent 50%, #000 50%, #000 60%, transparent 60%, transparent 100%)', backgroundSize: '20px 20px' }}></div>
                                 
                                 <div className="relative z-10 flex flex-col items-center">
-                                    <span className="bg-red-600 text-white font-black px-2 py-0.5 rounded text-[10px] md:text-xs mb-1 shadow-sm whitespace-nowrap animate-pulse">
+                                    <span className="bg-red-600 text-white font-black px-2 py-0.5 rounded text-xs md:text-xs mb-1 shadow-sm whitespace-nowrap animate-pulse">
                                         ここが上乗せ！
                                     </span>
-                                    <span className="text-gray-100 font-bold text-xs md:text-sm text-center leading-tight">
+                                    {/* Increased text size */}
+                                    <span className="text-gray-100 font-bold text-base md:text-base text-center leading-tight">
                                         営業マンの<br/>歩合給
                                     </span>
-                                    <span className="text-gray-400 text-[10px] mt-1">(中間マージン)</span>
+                                    <span className="text-gray-400 text-xs mt-1">(中間マージン)</span>
                                 </div>
                             </div>
 
                             {/* Bottom Half: Base Value - Dirty Concrete Gray */}
                             <div className="h-1/2 bg-[#757575] w-full flex flex-col items-center justify-center relative border-t border-white/10">
-                                <span className="text-gray-200 text-[10px] md:text-xs font-bold text-center leading-tight">
+                                {/* Increased text size from xs to sm */}
+                                <span className="text-gray-200 text-sm md:text-sm font-bold text-center leading-tight">
                                     本来の<br/>適正価格分
                                 </span>
                             </div>
@@ -104,7 +109,8 @@ const Comparison: React.FC = () => {
                     <div className="text-center mb-20 h-16 flex flex-col justify-end relative z-10">
                         {/* Change Text Color to Red/Dark */}
                         <span className="font-bold text-red-600 text-lg md:text-2xl block whitespace-nowrap transform scale-110">弊社</span>
-                        <span className="text-xs text-red-500 font-bold block leading-tight mt-1">（Web直販価格）</span>
+                        {/* Increased text size from xs to sm */}
+                        <span className="text-sm text-red-500 font-bold block leading-tight mt-1">（Web直販価格）</span>
                     </div>
                     
                     <div className="relative w-full h-36 md:h-48 flex items-end justify-center">
@@ -116,13 +122,13 @@ const Comparison: React.FC = () => {
                              {/* Content inside bar */}
                              {/* Moved "適正価格" to bottom to avoid overlap with "60万円" */}
                             <div className="h-full flex flex-col items-center justify-end pb-3 md:pb-5 text-white">
-                                <span className="font-bold text-xs md:text-base drop-shadow-md opacity-90">適正価格</span>
+                                <span className="font-bold text-sm md:text-lg drop-shadow-md opacity-90">適正価格</span>
                             </div>
                         </div>
 
                         {/* Pop-out Label */}
                         <div className={`absolute -top-14 left-1/2 transform -translate-x-1/2 z-20 transition-all duration-500 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                             <div className="bg-yellow-400 text-yellow-900 font-black px-4 py-2 rounded-full shadow-xl text-xs md:text-sm whitespace-nowrap animate-bounce border-2 border-white flex items-center gap-1">
+                             <div className="bg-yellow-400 text-yellow-900 font-black px-4 py-2 rounded-full shadow-xl text-sm whitespace-nowrap animate-bounce border-2 border-white flex items-center gap-1">
                                 <CheckCircle className="w-4 h-4" />
                                 余計なコスト0円
                             </div>
@@ -141,15 +147,17 @@ const Comparison: React.FC = () => {
                 </div>
             </div>
 
-            <div className={`mt-10 text-center transition-opacity duration-1000 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                <p className="text-xs text-gray-500 bg-white inline-block px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+            <div className={`mt-8 md:mt-10 text-center transition-opacity duration-1000 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                {/* Increased text size from xs to sm */}
+                <p className="text-sm md:text-base text-gray-500 bg-white inline-block px-4 py-2 rounded-full border border-gray-200 shadow-sm leading-relaxed text-left md:text-center">
                     ※価格差のイメージです。訪問販売業者の価格構造には「人件費」や「広告費」が大きく上乗せされています。
                 </p>
             </div>
         </div>
 
         {/* Real Photo Section - UPDATED LAYOUT FOR LARGER IMAGE */}
-        <div className={`relative z-20 -mt-20 px-4 transition-all duration-1000 delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Adjusted negative margin to overlap correctly with new padding (mt-12 for mobile, mt-20 for desktop) */}
+        <div className={`relative z-20 -mt-12 md:-mt-20 px-4 transition-all duration-1000 delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-30">
                 <div className="w-8 h-8 bg-white transform rotate-45 shadow-[0_-4px_6px_-2px_rgba(0,0,0,0.05)] rounded-sm"></div>
             </div>
@@ -165,7 +173,7 @@ const Comparison: React.FC = () => {
                     
                     {/* Text Side: 1/3 Width */}
                     <div className="w-full md:w-1/3 text-center md:text-left space-y-6">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 text-gray-600 text-xs font-bold tracking-wider uppercase mb-1">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 text-gray-600 text-sm font-bold tracking-wider uppercase mb-1">
                             {/* Evidence Icon Changed to Red */}
                             <ShieldCheck className="w-3 h-3 text-red-600" />
                             Evidence
@@ -177,7 +185,8 @@ const Comparison: React.FC = () => {
                             </span><br/>
                             実際の見積書をご覧ください
                         </h3>
-                        <p className="text-gray-600 font-medium leading-relaxed text-sm md:text-base">
+                        {/* Increased text size */}
+                        <p className="text-gray-600 font-medium leading-relaxed text-base md:text-lg">
                             こちらは実際に他社と弊社で相見積もりを取られた際のお客様の資料です。<br/><br/>
                             <span className="font-bold text-gray-900 bg-gray-100 px-2 py-1 rounded inline-block">商品・工事内容はほぼ同じ</span>
                             <br className="hidden md:block"/>でも、中間マージンの有無だけでこれだけの差が生まれます。
@@ -192,7 +201,7 @@ const Comparison: React.FC = () => {
                         >
                             <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-2 relative overflow-hidden group-hover:shadow-3xl transition-shadow group-image">
                                 <img 
-                                    src="https://storage.googleapis.com/blog-storage-momori-work/secure_home/comparison_image.png" 
+                                    src="https://storage.googleapis.com/blog-storage-secure-home/images/comparison_image.png" 
                                     alt="見積書比較" 
                                     className="w-full h-auto rounded-lg filter contrast-105"
                                 />
@@ -235,7 +244,7 @@ const Comparison: React.FC = () => {
                 onClick={(e) => e.stopPropagation()}
             >
                 <img 
-                    src="https://storage.googleapis.com/blog-storage-momori-work/secure_home/comparison_image.png" 
+                    src="https://storage.googleapis.com/blog-storage-secure-home/images/comparison_image.png" 
                     alt="見積書比較 拡大" 
                     className="max-w-full max-h-full object-contain rounded shadow-2xl"
                 />

@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             {/* Impact Statement */}
             <p className="text-lg md:text-xl text-gray-800 font-bold bg-white/90 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-red-600 shadow-xl animate-fade-in-up delay-200 leading-relaxed relative z-10">
               そのエコキュート、<br className="md:hidden"/>
-              <span className="text-gray-600 text-sm font-bold block mb-2">適正価格と比較して...</span>
+              <span className="text-gray-600 text-base md:text-lg font-bold block mb-2">適正価格と比較して...</span>
               <span className="relative inline-block mr-2">
                  <span className="absolute inset-0 bg-yellow-300 transform -skew-x-12 opacity-80"></span>
                  <span className="relative z-10 text-red-600 text-5xl md:text-6xl font-black tracking-tighter">
@@ -71,8 +71,8 @@ const Hero: React.FC = () => {
 
             {/* Call to Action Area */}
             <div className="space-y-6 pt-2 animate-fade-in-up delay-300 relative z-10">
-              <p className="text-sm font-bold text-gray-600 leading-relaxed flex flex-wrap items-center gap-2">
-                 <span className="bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs whitespace-nowrap border border-red-200">完全無料</span>
+              <p className="text-base md:text-lg font-bold text-gray-600 leading-relaxed flex flex-wrap items-center gap-2">
+                 <span className="bg-red-100 text-red-700 px-2 py-0.5 rounded text-sm whitespace-nowrap border border-red-200">完全無料</span>
                  <span>契約書にサインする前に。プロが適正価格か診断します。</span>
               </p>
               
@@ -82,14 +82,15 @@ const Hero: React.FC = () => {
                 
                 <Send className="w-8 h-8 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform drop-shadow-md" />
                 <div className="text-left leading-tight relative z-10">
-                  <span className="text-[10px] font-black tracking-wider opacity-100 block mb-0.5 text-green-50 shadow-black drop-shadow-sm">最短5分・匿名OK</span>
+                  {/* Increased text size from xs to sm */}
+                  <span className="text-sm font-black tracking-wider opacity-100 block mb-0.5 text-green-50 shadow-black drop-shadow-sm">最短5分・匿名OK</span>
                   <span className="text-xl md:text-2xl drop-shadow-md font-black">見積書をLINEで無料診断</span>
                 </div>
                 <ArrowRight className="w-6 h-6 opacity-80 group-hover:translate-x-1 transition-transform" />
               </a>
               
-              {/* Trust Badges - Centered on mobile, Left-aligned on Desktop */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-3 text-xs font-bold text-gray-500">
+              {/* Trust Badges - Centered on mobile, Left-aligned on Desktop - Increased font size */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm font-bold text-gray-500">
                 <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm"><span className="text-green-500">✔</span> 匿名OK</span>
                 <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm"><span className="text-green-500">✔</span> 写真はブレててもOK</span>
                 <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm"><span className="text-green-500">✔</span> 断り文句もアドバイス</span>
@@ -106,12 +107,7 @@ const Hero: React.FC = () => {
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-red-100 rounded-full blur-2xl opacity-60"></div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-100 rounded-full blur-2xl opacity-60"></div>
 
-                {/* Updated Warning Label:
-                    - Mobile: text-2xl (larger), px-4 (tighter padding to fit), w-7 icon.
-                    - Tablet: text-lg, px-5 (fits narrow col), w-6 icon.
-                    - Desktop: text-2xl, px-8, w-8 icon.
-                    - whitespace-nowrap: Ensures single line.
-                */}
+                {/* Updated Warning Label */}
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-[#D32F2F] text-white px-4 md:px-5 lg:px-8 py-3 rounded-full font-black text-2xl md:text-lg lg:text-2xl shadow-xl z-20 flex items-center justify-center gap-2 md:gap-2 lg:gap-3 ring-4 ring-white animate-pulse w-max max-w-full whitespace-nowrap">
                    <FileWarning className="w-7 h-7 md:w-6 md:h-6 lg:w-8 lg:h-8 flex-shrink-0" />
                    <span className="leading-none pb-0.5">こんな営業トークに注意</span>
@@ -120,40 +116,40 @@ const Hero: React.FC = () => {
                 <ul className="space-y-4 mt-6 relative z-10">
                    <li className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100 hover:bg-yellow-50 transition-colors">
                       <div className="bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center shadow-md flex-shrink-0 mt-0.5">
-                        <span className="font-bold text-xs">01</span>
+                        <span className="font-bold text-sm">01</span>
                       </div>
-                      <span className="font-bold text-gray-800 text-sm leading-snug">
+                      <span className="font-bold text-gray-800 text-base leading-snug">
                         「光熱費で元が取れるから<span className="bg-yellow-300 px-1">実質0円</span>になります」
                       </span>
                    </li>
                    <li className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100 hover:bg-yellow-50 transition-colors">
                       <div className="bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center shadow-md flex-shrink-0 mt-0.5">
-                        <span className="font-bold text-xs">02</span>
+                        <span className="font-bold text-sm">02</span>
                       </div>
-                      <span className="font-bold text-gray-800 text-sm leading-snug">
-                        「メーカーの代理店を名乗る急な訪問<br/><span className="text-xs text-gray-600 font-normal">(TOSHIBAの代理店です。集中工事のご案内で参りました)</span>」
+                      <span className="font-bold text-gray-800 text-base leading-snug">
+                        「メーカーの代理店を名乗る急な訪問<br/><span className="text-sm text-gray-600 font-normal">(TOSHIBAの代理店です。集中工事のご案内で参りました)</span>」
                       </span>
                    </li>
                    <li className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100 hover:bg-yellow-50 transition-colors">
                       <div className="bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center shadow-md flex-shrink-0 mt-0.5">
-                        <span className="font-bold text-xs">03</span>
+                        <span className="font-bold text-sm">03</span>
                       </div>
-                      <span className="font-bold text-gray-800 text-sm leading-snug">
+                      <span className="font-bold text-gray-800 text-base leading-snug">
                         「<span className="bg-yellow-300 px-1">今日だけの特別価格</span>/<br/>数名限定の割引価格です」
                       </span>
                    </li>
                    <li className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100 hover:bg-yellow-50 transition-colors">
                       <div className="bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center shadow-md flex-shrink-0 mt-0.5">
-                        <span className="font-bold text-xs">04</span>
+                        <span className="font-bold text-sm">04</span>
                       </div>
-                      <span className="font-bold text-gray-800 text-sm leading-snug">
+                      <span className="font-bold text-gray-800 text-base leading-snug">
                         「スマートハウスのご案内で参りました」という急な訪問からエコキュートの営業
                       </span>
                    </li>
                 </ul>
                 <div className="mt-6 text-center pt-4 border-t-2 border-dashed border-gray-200">
-                   <p className="text-sm font-black text-red-600 flex items-center justify-center gap-2">
-                     <AlertTriangle className="w-5 h-5 fill-yellow-400 text-red-600" />
+                   <p className="text-base font-black text-red-600 flex items-center justify-center gap-2">
+                     <AlertTriangle className="w-6 h-6 fill-yellow-400 text-red-600" />
                      これらは悪質な訪問販売のサインです
                    </p>
                 </div>

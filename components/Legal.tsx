@@ -16,9 +16,9 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
       <div className="container mx-auto px-4 max-w-3xl">
         <button 
           onClick={onBack}
-          className="flex items-center gap-2 text-gray-500 hover:text-gray-900 mb-8 transition-all duration-200 active:scale-95 text-sm font-bold"
+          className="flex items-center gap-2 text-gray-500 hover:text-gray-900 mb-8 transition-all duration-200 active:scale-95 text-base font-bold"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-5 h-5" />
           トップページに戻る
         </button>
 
@@ -26,7 +26,7 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
           特定商取引法に基づく表記
         </h1>
 
-        <div className="space-y-12 text-sm md:text-base text-gray-700 leading-relaxed">
+        <div className="space-y-12 text-base md:text-lg text-gray-700 leading-relaxed">
           
           {/* Section 1: Business Info */}
           <section>
@@ -36,25 +36,25 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
             <div>
               <dl className="divide-y divide-gray-200">
                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
-                  <dt className="text-sm font-bold text-gray-900">販売業者名</dt>
-                  <dd className="mt-1 text-sm text-gray-700 sm:mt-0 sm:col-span-2">株式会社セキュアホーム</dd>
+                  <dt className="text-base font-bold text-gray-900">販売業者名</dt>
+                  <dd className="mt-1 text-base text-gray-700 sm:mt-0 sm:col-span-2">株式会社セキュアホーム</dd>
                 </div>
                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
-                  <dt className="text-sm font-bold text-gray-900">運営責任者</dt>
-                  <dd className="mt-1 text-sm text-gray-700 sm:mt-0 sm:col-span-2">鈴木</dd>
+                  <dt className="text-base font-bold text-gray-900">運営責任者</dt>
+                  <dd className="mt-1 text-base text-gray-700 sm:mt-0 sm:col-span-2">鈴木</dd>
                 </div>
                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
-                  <dt className="text-sm font-bold text-gray-900">所在地</dt>
-                  <dd className="mt-1 text-sm text-gray-700 sm:mt-0 sm:col-span-2 space-y-2">
-                    <p><span className="font-bold text-gray-500 text-xs block">本店</span>〒160-0022 東京都新宿区新宿2-8-1 新宿セブンビル205号</p>
-                    <p><span className="font-bold text-gray-500 text-xs block">千葉支店</span>〒261-0023 千葉県千葉市美浜区中瀬1-6 BAY POINT幕張 2階</p>
+                  <dt className="text-base font-bold text-gray-900">所在地</dt>
+                  <dd className="mt-1 text-base text-gray-700 sm:mt-0 sm:col-span-2 space-y-4">
+                    <p><span className="font-bold text-gray-500 text-sm block">本店</span>〒160-0022 東京都新宿区新宿2-8-1 新宿セブンビル205号</p>
+                    <p><span className="font-bold text-gray-500 text-sm block">千葉支店</span>〒261-0023 千葉県千葉市美浜区中瀬1-6 BAY POINT幕張 2階</p>
                   </dd>
                 </div>
                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
-                  <dt className="text-sm font-bold text-gray-900">電話番号</dt>
-                  <dd className="mt-1 text-sm text-gray-700 sm:mt-0 sm:col-span-2">
+                  <dt className="text-base font-bold text-gray-900">電話番号</dt>
+                  <dd className="mt-1 text-base text-gray-700 sm:mt-0 sm:col-span-2">
                     043-382-2106<br/>
-                    <span className="text-gray-500 text-xs">（受付時間: 平日 9:00〜18:00）</span>
+                    <span className="text-gray-500 text-sm">（受付時間: 平日 9:00〜18:00）</span>
                   </dd>
                 </div>
               </dl>
@@ -85,7 +85,7 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
                   <li>振込手数料（銀行振込の場合）</li>
                   <li>遠方出張費（対応エリア外の場合のみ事前にご案内します）</li>
                 </ul>
-                <p className="mt-2 text-xs text-gray-500">※現場調査の結果、追加工事が必要な場合は、必ず着工前にご説明・お見積りいたします。</p>
+                <p className="mt-2 text-sm text-gray-500">※現場調査の結果、追加工事が必要な場合は、必ず着工前にご説明・お見積りいたします。</p>
               </div>
             </div>
           </section>
@@ -105,13 +105,13 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-2">お支払い時期</h3>
-                <dl className="space-y-2">
+                <dl className="space-y-3">
                     <div className="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                        <dt className="font-bold text-gray-700 min-w-[120px]">銀行振込</dt>
+                        <dt className="font-bold text-gray-700 min-w-[140px]">銀行振込</dt>
                         <dd className="text-gray-600">工事完了後、7日以内にお願いいたします。</dd>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                        <dt className="font-bold text-gray-700 min-w-[120px]">リフォームローン</dt>
+                        <dt className="font-bold text-gray-700 min-w-[140px]">リフォームローン</dt>
                         <dd className="text-gray-600">各契約会社の規定に基づきます。</dd>
                     </div>
                 </dl>
@@ -119,13 +119,13 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
               <div>
                 <h3 className="font-bold text-gray-900 mb-2">商品の引き渡し時期（施工時期）</h3>
                 <p className="mb-2 text-gray-600">ご契約後、お客様と施工日程を調整し、決定した期日に工事を行います。</p>
-                <dl className="space-y-2">
+                <dl className="space-y-3">
                     <div className="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                        <dt className="font-bold text-gray-700 min-w-[120px]">在庫がある場合</dt>
+                        <dt className="font-bold text-gray-700 min-w-[140px]">在庫がある場合</dt>
                         <dd className="text-gray-600">ご契約から1週間〜2週間程度</dd>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                        <dt className="font-bold text-gray-700 min-w-[120px]">取り寄せの場合</dt>
+                        <dt className="font-bold text-gray-700 min-w-[140px]">取り寄せの場合</dt>
                         <dd className="text-gray-600">納期確定次第ご連絡いたします。</dd>
                     </div>
                 </dl>
@@ -143,18 +143,18 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
                 <h3 className="font-bold text-gray-900 mb-2">キャンセル・返品について</h3>
                 <dl className="space-y-3">
                     <div>
-                        <dt className="font-bold text-gray-700 text-sm">工事請負契約締結後</dt>
+                        <dt className="font-bold text-gray-700 text-base">工事請負契約締結後</dt>
                         <dd className="text-gray-600 mt-1">原則として、お客様都合によるキャンセル・返品はお受けできません。</dd>
                     </div>
                     <div>
-                        <dt className="font-bold text-gray-700 text-sm">初期不良</dt>
+                        <dt className="font-bold text-gray-700 text-base">初期不良</dt>
                         <dd className="text-gray-600 mt-1">施工完了時に機器の不具合があった場合は、直ちに新品交換またはメーカー修理対応を行います。</dd>
                     </div>
                 </dl>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-2 text-sm">クーリング・オフについて</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="font-bold text-gray-900 mb-2 text-base">クーリング・オフについて</h3>
+                <p className="text-base text-gray-600 leading-relaxed">
                     訪問販売等の特定商取引法の対象となる契約については、法定の契約書面受領日から8日以内であれば、書面または電磁的記録により無条件で契約の解除（クーリング・オフ）が可能です。当社はお客様の権利を尊重し、法令遵守を徹底しております。
                 </p>
               </div>
@@ -162,11 +162,11 @@ const Legal: React.FC<LegalProps> = ({ onBack }) => {
                 <h3 className="font-bold text-gray-900 mb-2">保証内容（セキュアホームの強み）</h3>
                 <dl className="space-y-3">
                     <div>
-                        <dt className="font-bold text-gray-700 text-sm">メーカー保証</dt>
+                        <dt className="font-bold text-gray-700 text-base">メーカー保証</dt>
                         <dd className="text-gray-600 mt-1">商品ごとのメーカー規定に準じます。</dd>
                     </div>
                     <div>
-                        <dt className="font-bold text-gray-700 text-sm">施工保証・アフターサポート</dt>
+                        <dt className="font-bold text-gray-700 text-base">施工保証・アフターサポート</dt>
                         <dd className="text-gray-600 mt-1">施工後こそが本当のお付き合いの始まりと考えております。独自の定期点検と長期サポート体制を整え、万が一の不具合や将来のメンテナンスにも迅速に対応いたします。</dd>
                     </div>
                 </dl>

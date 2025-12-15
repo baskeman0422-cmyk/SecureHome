@@ -14,7 +14,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
 const cardImages = [
   "https://images.unsplash.com/photo-1604594849809-dfedbc827105?auto=format&fit=crop&q=80&w=800", // Wallet/Money
   "https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?auto=format&fit=crop&q=80&w=800", // Smile/People
-  "https://storage.googleapis.com/blog-storage-momori-work/secure_home/certification.jpg?auto=format&fit=crop&q=80&w=800", // Certification
+  "https://storage.googleapis.com/blog-storage-secure-home/images/certification.jpg", // Certification
   "https://plus.unsplash.com/premium_photo-1676666379051-383ed1b005e8?auto=format&fit=crop&q=80&w=800", // Tech/Machines
 ];
 
@@ -52,14 +52,15 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
     return (
         <div 
             ref={elementRef}
-            className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-row h-full reveal-on-scroll ${isVisible ? 'is-visible' : ''} min-h-[140px] md:min-h-[180px]`}
+            // Updated layout: flex-col-reverse on mobile (stack), flex-row on desktop
+            className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col-reverse md:flex-row reveal-on-scroll ${isVisible ? 'is-visible' : ''} min-h-auto md:min-h-[180px]`}
             style={{ transitionDelay: `${index * 150}ms` }}
         >
             {/* Left Content Side */}
-            <div className="p-4 md:p-8 flex-1 flex flex-col justify-center relative z-10 w-[65%]">
+            <div className="p-4 md:p-8 flex-1 flex flex-col justify-center relative z-10 w-full md:w-[60%]">
                 
                 {/* Stylish Number Badge - Changed to Red */}
-                <div className="absolute top-0 left-0 bg-red-600 text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-br-xl z-20">
+                <div className="absolute top-0 left-0 bg-red-600 text-white text-xs md:text-sm font-black px-3 py-1 rounded-br-xl z-20">
                     POINT 0{index + 1}
                 </div>
                 
@@ -69,19 +70,21 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
                         <div className="w-7 h-7 md:w-10 md:h-10 bg-red-50 text-red-600 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                             {iconMap[strength.iconName] || <Shield className="w-4 h-4" />}
                         </div>
-                        <h3 className="text-sm md:text-xl font-bold text-gray-900 leading-tight group-hover:text-red-700 transition-colors">
+                        <h3 className="text-base md:text-xl font-bold text-gray-900 leading-tight group-hover:text-red-700 transition-colors">
                             {strength.title}
                         </h3>
                     </div>
                     
-                    <p className="text-[11px] md:text-sm text-gray-600 leading-normal font-medium pl-1">
+                    {/* Increased description text size: text-base on mobile instead of text-sm */}
+                    <p className="text-base md:text-base lg:text-lg text-gray-600 leading-normal font-medium pl-1">
                         {strength.description}
                     </p>
                 </div>
             </div>
 
             {/* Right Image Side */}
-            <div className="w-[35%] md:w-[40%] relative overflow-hidden flex-shrink-0">
+            {/* Mobile: w-full and fixed height. Desktop: 40% width and auto height (fills flex) */}
+            <div className="w-full md:w-[40%] relative overflow-hidden flex-shrink-0 h-48 md:h-auto">
                  <div className="absolute inset-0 bg-gray-200 transition-transform duration-700 group-hover:scale-110 h-full w-full">
                     <img 
                         src={bgImage} 
@@ -113,7 +116,7 @@ const Features: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 relative">
             <div className="text-center md:text-left w-full md:w-2/3">
                 {/* Badge Changed to Red/Gray */}
-                <span className="text-red-600 font-bold tracking-widest text-xs md:text-sm bg-red-50 px-3 py-1 rounded-full mb-3 inline-block">OUR STRENGTH</span>
+                <span className="text-red-600 font-bold tracking-widest text-sm bg-red-50 px-3 py-1 rounded-full mb-3 inline-block">OUR STRENGTH</span>
                 <h2 className="text-2xl md:text-4xl font-black text-gray-900 leading-tight">
                 なぜ、弊社なら<br className="md:hidden" />
                 {/* Text Highlight Changed to Red */}
@@ -123,7 +126,8 @@ const Features: React.FC = () => {
                 </span>
                 に<br className="md:hidden" />導入できるのか？
                 </h2>
-                <p className="mt-4 md:mt-6 text-gray-600 font-medium text-sm md:text-lg">
+                {/* Increased intro text size */}
+                <p className="mt-4 md:mt-6 text-gray-600 font-medium text-base md:text-lg">
                     <span className="font-bold text-gray-900">「安かろう悪かろう」ではありません。</span><br/>
                     徹底的なコストカットと、プロの職人による直接施工で実現しています。
                 </p>

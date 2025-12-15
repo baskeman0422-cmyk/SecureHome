@@ -14,10 +14,11 @@ const StickyFooter: React.FC = () => {
         <div className="absolute top-0 -left-full w-1/2 h-full bg-white/30 skew-x-[-20deg] animate-shine"></div>
         
         <div className="flex items-center justify-center gap-3 relative z-10">
-           <Send className="w-7 h-7 drop-shadow-sm" />
+           <Send className="w-8 h-8 drop-shadow-sm" />
            <div className="text-center">
-             <p className="text-[10px] leading-none font-bold mb-1 opacity-100 text-green-50 drop-shadow-sm">見積書を撮って送るだけ</p>
-             <p className="text-xl font-black leading-none drop-shadow-md">LINEで無料診断する</p>
+             {/* Increased font size from xs to sm */}
+             <p className="text-sm leading-none font-bold mb-1 opacity-100 text-green-50 drop-shadow-sm">見積書を撮って送るだけ</p>
+             <p className="text-2xl font-black leading-none drop-shadow-md">LINEで無料診断する</p>
            </div>
         </div>
       </a>

@@ -27,7 +27,8 @@ const WarningCard: React.FC<{ tactic: TacticItem; index: number }> = ({ tactic, 
             <h3 className="text-lg md:text-xl font-bold text-black mb-3 border-b-2 border-yellow-100 pb-2">
                 {tactic.title}
             </h3>
-            <p className="text-gray-800 font-medium leading-relaxed text-sm md:text-base">
+            {/* Increased description text size */}
+            <p className="text-gray-800 font-medium leading-relaxed text-base md:text-lg">
                 {tactic.description}
             </p>
             </div>

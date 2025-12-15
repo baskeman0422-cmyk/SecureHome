@@ -22,7 +22,8 @@ const Step: React.FC<{ number: string; icon: React.ReactNode; title: string; des
         </span>
         </div>
         <h4 className="text-lg font-bold text-gray-900 mb-2">{title}</h4>
-        <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
+        {/* Increased description text size */}
+        <p className="text-base text-gray-600 leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -31,39 +32,44 @@ const Flow: React.FC = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-white overflow-hidden relative">
        <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        {/* Updated Layout: justify-center, gap-8 lg:gap-16 to reduce gap on wide screens */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
             
-            <div className="w-full md:w-1/3 text-center md:text-left">
+            {/* Left side: Phone simulation. md:w-auto allows it to be compact. md:flex-shrink-0 prevents shrinking too much. */}
+            <div className="w-full md:w-auto md:flex-shrink-0 text-center md:text-left flex flex-col items-center md:items-start max-w-md">
                 {/* Badge Changed to Red/Gray */}
                 <span className="text-red-600 font-bold tracking-widest text-sm bg-red-50 px-3 py-1 rounded-full mb-3 inline-block">EASY STEPS</span>
                 <h2 className="text-3xl font-black text-gray-900 mt-4">無料診断の流れ</h2>
-                <p className="text-gray-500 mt-4 font-medium">
+                {/* Increased intro text size */}
+                <p className="text-gray-600 mt-4 font-medium text-lg">
                     面倒な入力は一切不要。<br/>
                     スマホで写真を撮ってLINEで送るだけ。<br/>
                     {/* Highlight Changed to Red */}
                     <span className="text-red-600 font-bold">最短5分</span>でプロが回答します。
                 </p>
-                <div className="mt-8 relative mx-auto md:mx-0 max-w-[280px]">
+                
+                {/* Phone container: max-w-[280px] w-full. Removed h-[540px] fixed height. */}
+                <div className="mt-8 relative mx-auto md:mx-0 w-full max-w-[280px]">
                     {/* Phone/Chat Simulation Image */}
-                    {/* Increased height to 540px to fit contents */}
-                    <div className="relative rounded-[2.5rem] border-[10px] border-gray-900 bg-gray-900 overflow-hidden shadow-2xl h-[540px]">
+                    {/* Changed aspect-[9/19] to aspect-[9/15] to reduce bottom whitespace. */}
+                    <div className="relative rounded-[2.5rem] border-[10px] border-gray-900 bg-gray-900 overflow-hidden shadow-2xl aspect-[9/15] h-auto flex flex-col">
                         {/* Status Bar Mock */}
-                        <div className="h-6 bg-gray-900 w-full flex justify-end px-4 items-center gap-1.5 z-20 relative">
+                        <div className="h-6 bg-gray-900 w-full flex justify-end px-4 items-center gap-1.5 z-20 relative flex-shrink-0">
                              <div className="w-4 h-4 rounded-full border border-gray-600 opacity-50"></div>
                              <div className="w-3 h-3 rounded-full bg-gray-600 opacity-50"></div>
                         </div>
                         {/* Header Mock */}
-                        <div className="bg-[#1e2329] p-3 text-white text-xs flex items-center justify-center relative shadow-md z-10 border-b border-gray-800">
+                        <div className="bg-[#1e2329] p-3 text-white text-xs flex items-center justify-center relative shadow-md z-10 border-b border-gray-800 flex-shrink-0">
                              <span className="font-bold">エコキュート適正価格診断センター</span>
                         </div>
                         
-                        {/* Chat Area Mock - Background Color changed to standard chat bg */}
-                        <div className="p-3 bg-[#7193c1] h-full flex flex-col gap-3 overflow-hidden pb-12 pt-4">
+                        {/* Chat Area Mock - flex-1 to fill remaining space. Reduced pb-12 to pb-4. */}
+                        <div className="p-3 bg-[#7193c1] flex-1 flex flex-col gap-3 overflow-hidden pb-4 pt-4">
                              
-                             {/* User Message 1: Text */}
+                             {/* User Message 1: Text - Increased text size */}
                              <div className="self-start max-w-[85%] animate-fade-in-up delay-100">
                                 <div className="bg-white p-2.5 rounded-2xl rounded-tl-none shadow-sm relative">
-                                    <p className="text-xs text-gray-800 leading-snug">見積もりの写真送ります。</p>
+                                    <p className="text-sm text-gray-800 leading-snug">見積もりの写真送ります。</p>
                                 </div>
                              </div>
 
@@ -71,20 +77,20 @@ const Flow: React.FC = () => {
                              <div className="self-start max-w-[75%] animate-fade-in-up delay-200">
                                 <div className="bg-transparent">
                                     <img 
-                                        src="https://storage.googleapis.com/blog-storage-momori-work/secure_home/estimate.jpg" 
+                                        src="https://storage.googleapis.com/blog-storage-secure-home/images/estimate.jpg" 
                                         className="rounded-xl border-2 border-white/50 w-32 h-auto object-cover shadow-sm" 
                                         alt="Sent document"
                                     />
                                 </div>
                              </div>
 
-                             {/* Center Response */}
+                             {/* Center Response - Increased text size */}
                              <div className="self-end max-w-[90%] mt-1 animate-fade-in-up delay-300">
-                                <div className="bg-[#85e249] p-3 rounded-2xl rounded-tr-none shadow-sm text-xs leading-relaxed text-black relative text-left">
+                                <div className="bg-[#85e249] p-3 rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed text-black relative text-left">
                                      <p className="mb-1 font-bold">診断結果:</p>
                                      <p>拝見しました。これは相場より<br/><span className="font-bold text-red-600 bg-white/50 px-1 rounded mx-0.5">40万円ほど高い</span>可能性があります。</p>
                                      {/* Read receipt mock */}
-                                     <span className="absolute -left-8 bottom-0 text-[9px] text-white">既読<br/>10:05</span>
+                                     <span className="absolute -left-8 bottom-0 text-[10px] text-white">既読<br/>10:05</span>
                                 </div>
                              </div>
 
@@ -98,7 +104,8 @@ const Flow: React.FC = () => {
                 </div>
             </div>
 
-            <div className="w-full md:w-2/3">
+            {/* Right side: Steps. md:flex-1 to take available space. */}
+            <div className="w-full md:flex-1 max-w-2xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Step 
                     number="01" 

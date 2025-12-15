@@ -15,9 +15,9 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
       <div className="container mx-auto px-4 max-w-3xl">
         <button 
           onClick={onBack}
-          className="flex items-center gap-2 text-gray-500 hover:text-gray-900 mb-8 transition-colors text-sm font-bold"
+          className="flex items-center gap-2 text-gray-500 hover:text-gray-900 mb-8 transition-colors text-base font-bold"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-5 h-5" />
           トップページに戻る
         </button>
 
@@ -26,13 +26,13 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
           <span className="text-lg md:text-xl font-bold text-gray-600">（個人情報保護方針）</span>
         </h1>
 
-        <div className="text-sm md:text-base text-gray-700 leading-relaxed mb-12 text-center md:text-left">
+        <div className="text-base md:text-lg text-gray-700 leading-relaxed mb-12 text-center md:text-left">
             <p>
                 株式会社セキュアホーム（以下「当社」といいます）は、お客様の個人情報の重要性を深く認識し、その保護に取り組むことが重要な責務であると考えています。当社は、以下の通り個人情報保護方針を定め、全社を挙げて個人情報の適切な取り扱いと保護を推進いたします。
             </p>
         </div>
 
-        <div className="space-y-12 text-sm md:text-base text-gray-700 leading-relaxed">
+        <div className="space-y-12 text-base md:text-lg text-gray-700 leading-relaxed">
           
           <section>
             <h2 className="text-xl font-bold text-gray-900 border-b-2 border-gray-100 pb-2 mb-4">
@@ -81,7 +81,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                 <li>
                     <span className="font-bold text-gray-800">業務委託に伴う提供</span><br/>
                     施工や配送、保証登録など、利用目的の達成に必要な範囲内で、協力会社やメーカー等に業務を委託する場合。（この場合、委託先に対して適切な監督を行います）<br/>
-                    <span className="text-xs text-gray-500 block mt-1">例：エコキュートの機器保証登録のために、メーカーへお客様情報（設置場所・氏名等）を登録する場合など</span>
+                    <span className="text-sm text-gray-500 block mt-1">例：エコキュートの機器保証登録のために、メーカーへお客様情報（設置場所・氏名等）を登録する場合など</span>
                 </li>
                 <li>法令に基づき開示が必要な場合</li>
                 <li>人の生命、身体または財産の保護のために必要があり、本人の同意を得ることが困難である場合</li>
