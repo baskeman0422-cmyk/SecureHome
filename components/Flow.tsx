@@ -52,7 +52,7 @@ const Flow: React.FC = () => {
                 <div className="mt-8 relative mx-auto md:mx-0 w-full max-w-[280px]">
                     {/* Phone/Chat Simulation Image */}
                     {/* Changed aspect-[9/19] to aspect-[9/15] to reduce bottom whitespace. */}
-                    <div className="relative rounded-[2.5rem] border-[10px] border-gray-900 bg-gray-900 overflow-hidden shadow-2xl aspect-[9/15] h-auto flex flex-col">
+                    <div className="relative rounded-[2.5rem] border-[10px] border-gray-900 bg-gray-900 overflow-hidden shadow-2xl aspect-[8/16] h-auto flex flex-col">
                         {/* Status Bar Mock */}
                         <div className="h-6 bg-gray-900 w-full flex justify-end px-4 items-center gap-1.5 z-20 relative flex-shrink-0">
                              <div className="w-4 h-4 rounded-full border border-gray-600 opacity-50"></div>
