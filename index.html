@@ -20,9 +20,9 @@
     </script>
     
     <meta charset="UTF-8" />
-    <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>エコキュート適正価格診断センター | 無料見積もり診断</title>
+    <meta name="robots" content="noindex" />
+    <title>エコキュート適正価格協会 | 無料見積もり診断</title>
     <link rel="icon" href="https://storage.googleapis.com/blog-storage-secure-home/images/icon.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -31,6 +31,13 @@
         font-family: 'Noto Sans JP', sans-serif;
       }
       
+      /* Constrain containers to tablet width on desktop */
+      @media (min-width: 896px) {
+        .container {
+          max-width: 896px !important;
+        }
+      }
+
       /* Logo Font - Helvetica Style */
       .font-logo {
         font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans JP", sans-serif;
@@ -162,6 +169,15 @@
       }
       .animate-shake-glow {
         animation: shake-glow 4s infinite;
+      }
+
+      /* Soft Float for Secondary Buttons */
+      @keyframes soft-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      .animate-soft-float {
+        animation: soft-float 3s ease-in-out infinite;
       }
 
     </style>

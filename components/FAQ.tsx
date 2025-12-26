@@ -28,7 +28,7 @@ const AccordionItem: React.FC<{ question: string; answer: string }> = ({ questio
 
 const FAQ: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="faq">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-black text-gray-900">よくあるご質問</h2>

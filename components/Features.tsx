@@ -37,9 +37,6 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
                 setIsActive(entry.isIntersecting);
             },
             {
-                // rootMargin defines the "active" zone in the middle of the viewport.
-                // -40% from top and bottom creates a 20% strip in the center vertically.
-                // Triggers when the element enters this center strip.
                 rootMargin: '-40% 0px -40% 0px',
                 threshold: 0
             }
@@ -52,7 +49,6 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
     return (
         <div 
             ref={elementRef}
-            // Updated layout: flex-col-reverse on mobile (stack), flex-row on desktop
             className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col-reverse md:flex-row reveal-on-scroll ${isVisible ? 'is-visible' : ''} min-h-auto md:min-h-[180px]`}
             style={{ transitionDelay: `${index * 150}ms` }}
         >
@@ -75,7 +71,6 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
                         </h3>
                     </div>
                     
-                    {/* Increased description text size: text-base on mobile instead of text-sm */}
                     <p className="text-base md:text-base lg:text-lg text-gray-600 leading-normal font-medium pl-1">
                         {strength.description}
                     </p>
@@ -83,14 +78,11 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
             </div>
 
             {/* Right Image Side */}
-            {/* Mobile: w-full and fixed height. Desktop: 40% width and auto height (fills flex) */}
             <div className="w-full md:w-[40%] relative overflow-hidden flex-shrink-0 h-48 md:h-auto">
                  <div className="absolute inset-0 bg-gray-200 transition-transform duration-700 group-hover:scale-110 h-full w-full">
                     <img 
                         src={bgImage} 
                         alt={strength.title} 
-                        // On mobile/tablet (< lg): uses isActive to toggle between grayscale and grayscale-0
-                        // On desktop (>= lg): forces grayscale by default, and grayscale-0 on hover
                         className={`w-full h-full object-cover ${imgPositionClass} transition-all duration-700 
                             ${isActive ? 'grayscale-0 opacity-100' : 'grayscale opacity-80'} 
                             lg:grayscale lg:opacity-80 lg:group-hover:grayscale-0 lg:group-hover:opacity-100`}
@@ -105,28 +97,24 @@ const FeatureCard: React.FC<{ strength: StrengthItem; index: number }> = ({ stre
 
 const Features: React.FC = () => {
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        {/* Background Decorative Blob - Neutralized */}
+    <section className="py-20 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden" id="features">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
             <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gray-100 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-blob"></div>
             <div className="absolute bottom-20 left-0 w-[400px] h-[400px] bg-yellow-50 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-blob animation-delay-2000"></div>
         </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 max-w-4xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 relative">
             <div className="text-center md:text-left w-full md:w-2/3">
-                {/* Badge Changed to Red/Gray */}
                 <span className="text-red-600 font-bold tracking-widest text-sm bg-red-50 px-3 py-1 rounded-full mb-3 inline-block">OUR STRENGTH</span>
                 <h2 className="text-2xl md:text-4xl font-black text-gray-900 leading-tight">
                 なぜ、弊社なら<br className="md:hidden" />
-                {/* Text Highlight Changed to Red */}
                 <span className="text-red-600 relative inline-block mx-1">
                     もっと安く・安全
                     <span className="absolute bottom-0 left-0 w-full h-2 bg-red-100 -z-10"></span>
                 </span>
                 に<br className="md:hidden" />導入できるのか？
                 </h2>
-                {/* Increased intro text size */}
                 <p className="mt-4 md:mt-6 text-gray-600 font-medium text-base md:text-lg">
                     <span className="font-bold text-gray-900">「安かろう悪かろう」ではありません。</span><br/>
                     徹底的なコストカットと、プロの職人による直接施工で実現しています。
@@ -134,8 +122,8 @@ const Features: React.FC = () => {
             </div>
         </div>
         
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 max-w-6xl mx-auto">
+        {/* Grid Layout restricted to narrower container */}
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 max-w-3xl mx-auto">
           {STRENGTHS.map((strength, index) => (
             <FeatureCard key={strength.title} strength={strength} index={index} />
           ))}

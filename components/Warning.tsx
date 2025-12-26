@@ -38,7 +38,7 @@ const WarningCard: React.FC<{ tactic: TacticItem; index: number }> = ({ tactic, 
 
 const Warning: React.FC = () => {
   return (
-    <section className="py-16 bg-[#FFF9C4]"> {/* Yellow-50/100ish */}
+    <section className="py-16 bg-[#FFF9C4]" id="warning"> {/* Yellow-50/100ish */}
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="inline-block relative mb-4">

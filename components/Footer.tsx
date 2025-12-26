@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ onLegalClick, onPrivacyClick, onHomeCli
                       alt="Logo" 
                       className="h-8 w-8 object-contain flex-shrink-0"
                     />
-                    <span className="text-lg md:text-xl font-bold tracking-tight text-white group-hover:text-gray-100 transition-colors">エコキュート適正価格診断センター</span>
+                    <span className="text-lg md:text-xl font-bold tracking-tight text-white group-hover:text-gray-100 transition-colors">エコキュート適正価格協会</span>
                   </button>
                   {/* Increased text size from xs to sm */}
                   <p className="text-sm text-gray-500 pl-11">運営：セキュアホーム</p>
@@ -93,7 +93,7 @@ const Footer: React.FC<FooterProps> = ({ onLegalClick, onPrivacyClick, onHomeCli
                 <button onClick={onPrivacyClick} className="hover:text-white transition-all duration-200 active:scale-95 inline-block">プライバシーポリシー</button>
             </div>
             <div className="font-medium opacity-60">
-                 &copy; {new Date().getFullYear()} EcoCute Fair Price Diagnosis Center / Secure Home Co., Ltd.
+                 &copy; {new Date().getFullYear()} EcoCute Fair Price Association / Secure Home Co., Ltd.
             </div>
         </div>
       </div>
