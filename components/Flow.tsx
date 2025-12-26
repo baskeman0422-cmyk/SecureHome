@@ -72,7 +72,7 @@ const Flow: React.FC = () => {
                              <div className="self-end max-w-[90%] mt-1 animate-fade-in-up delay-300">
                                 <div className="bg-[#85e249] p-3 rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed text-black relative text-left">
                                      <p className="mb-1 font-bold">診断結果:</p>
-                                     <p>拝見しました。これは相場より<br/><span className="font-bold text-red-600 bg-white/50 px-1 rounded mx-0.5">30万円ほど高い</span>可能性があります。</p>
+                                     <p>これは相場より<br/><span className="font-bold text-red-600 bg-white/50 px-1 rounded mx-0.5">30万円ほど高い</span>可能性があります。</p>
                                      <span className="absolute -left-8 bottom-0 text-[10px] text-white">既読<br/>10:05</span>
                                 </div>
                              </div>
