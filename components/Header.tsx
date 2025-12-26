@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
               className="h-9 w-9 md:h-12 md:w-12 mr-2 object-contain"
             />
             {/* Increased font sizes: mobile to 1.8rem, desktop to 4xl */}
-            <span className="text-[1.8rem] md:text-4xl leading-none mt-0.5">エコキュート適正価格協会</span>
+            <span className="text-[1.6rem] md:text-[2rem] leading-none mt-0.5">エコキュート適正価格協会</span>
           </button>
         </div>
         
