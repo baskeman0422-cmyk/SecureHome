@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Send } from 'lucide-react';
 
@@ -38,8 +39,13 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
               alt="Logo" 
               className="h-9 w-9 md:h-12 md:w-12 mr-2 object-contain"
             />
-            {/* Increased font sizes: mobile to 1.8rem, desktop to 4xl */}
-            <span className="text-[1.6rem] md:text-[2rem] leading-none mt-0.5">エコキュート適正価格協会</span>
+            {/* 
+              Font sizes updated to 1.6rem (mobile) and 2rem (desktop).
+              Added drop-shadow for better legibility and a "framed" look.
+            */}
+            <span className="text-[1.6rem] md:text-[2rem] leading-none mt-0.5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+              エコキュート適正価格協会
+            </span>
           </button>
         </div>
         
