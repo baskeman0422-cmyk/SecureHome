@@ -58,13 +58,13 @@ const Hero: React.FC = () => {
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-24 mt-6 md:mt-10 max-w-4xl mx-auto">
             <h1 className="flex flex-col items-center animate-fade-in-up delay-100">
                 <span className="text-[6.5vw] sm:text-4xl md:text-5xl font-black text-gray-900 leading-none tracking-tighter mb-4 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
-                  悪質なエコキュートの
+                  エコキュートの
                 </span>
                 
                 <span className="text-[11vw] sm:text-6xl md:text-7xl font-black leading-tight tracking-tighter block mt-2">
                   <span className="relative inline-block">
                     <span className="relative z-10 bg-yellow-300 px-3 py-1 text-black shadow-lg transform -rotate-1 inline-block mr-1">
-                      訪問販売被害
+                      悪質な訪問販売被害
                     </span>
                     <span className="absolute inset-0 bg-yellow-400 translate-x-1 translate-y-1 z-0 transform -rotate-1 rounded"></span>
                   </span>
