@@ -58,20 +58,22 @@ const Hero: React.FC = () => {
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-24 mt-6 md:mt-10 max-w-4xl mx-auto">
             <h1 className="flex flex-col items-center animate-fade-in-up delay-100">
                 <span className="text-[6.5vw] sm:text-4xl md:text-5xl font-black text-gray-900 leading-none tracking-tighter mb-4 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
-                  エコキュートの
+                  エコキュートの悪質な
                 </span>
                 
                 <span className="text-[11vw] sm:text-6xl md:text-7xl font-black leading-tight tracking-tighter block mt-2">
                   <span className="relative inline-block">
                     <span className="relative z-10 bg-yellow-300 px-3 py-1 text-black shadow-lg transform -rotate-1 inline-block mr-1">
-                      悪質な訪問販売被害
+                      訪問販売被害
                     </span>
                     <span className="absolute inset-0 bg-yellow-400 translate-x-1 translate-y-1 z-0 transform -rotate-1 rounded"></span>
                   </span>
                   <span 
                     className="block mt-2 text-[#DC2627] font-black drop-shadow-[0_4px_12px_rgba(220,38,39,0.35)]"
                   >
-                    が<span className="underline decoration-red-200 decoration-[10px] underline-offset-4">急増中</span>です。
+                    <span className="text-[0.65em] md:text-[0.75em] align-middle mr-0.5">が</span>
+                    <span className="underline decoration-red-200 decoration-[10px] underline-offset-4">急増</span>
+                    <span className="text-[0.65em] md:text-[0.75em] align-middle ml-0.5 tracking-tighter">しております。</span>
                   </span>
                 </span>
             </h1>
@@ -91,7 +93,7 @@ const Hero: React.FC = () => {
             </div>
         </div>
 
-        {/* COMPARISON ESTIMATES BLOCK - Corrected Image URLs to Uppercase */}
+        {/* COMPARISON ESTIMATES BLOCK */}
         <div className="animate-fade-in-up delay-300 mt-24 md:mt-48 mb-14 md:mb-64 relative z-40 max-w-4xl mx-auto">
             <div className="flex justify-center items-center gap-4 sm:gap-20 lg:gap-32 px-1">
                 
