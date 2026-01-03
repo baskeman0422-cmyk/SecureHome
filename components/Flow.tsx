@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Camera, Send, FileCheck, MessageSquare } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
@@ -47,7 +48,7 @@ const Flow: React.FC = () => {
                              <div className="w-4 h-4 rounded-full border border-gray-600 opacity-50"></div>
                              <div className="w-3 h-3 rounded-full bg-gray-600 opacity-50"></div>
                         </div>
-                        <div className="bg-[#1e2329] p-3 text-white text-xs flex items-center justify-center relative shadow-md z-10 border-b border-gray-800 flex-shrink-0">
+                        <div className="bg-[#1e2329] p-3 text-white text-[10px] flex items-center justify-center relative shadow-md z-10 border-b border-gray-800 flex-shrink-0">
                              <span className="font-bold">エコキュート適正価格協会</span>
                         </div>
                         
@@ -55,7 +56,7 @@ const Flow: React.FC = () => {
                              
                              <div className="self-start max-w-[85%] animate-fade-in-up delay-100">
                                 <div className="bg-white p-2.5 rounded-2xl rounded-tl-none shadow-sm relative">
-                                    <p className="text-sm text-gray-800 leading-snug">見積もりの写真送ります。</p>
+                                    <p className="text-xs text-gray-800 leading-snug">見積もりの写真送ります。</p>
                                 </div>
                              </div>
 
@@ -69,11 +70,11 @@ const Flow: React.FC = () => {
                                 </div>
                              </div>
 
-                             <div className="self-end max-w-[90%] mt-1 animate-fade-in-up delay-300">
-                                <div className="bg-[#85e249] p-3 rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed text-black relative text-left">
-                                     <p className="mb-1 font-bold">診断結果:</p>
-                                     <p>これは相場より<br/><span className="font-bold text-red-600 bg-white/50 px-1 rounded mx-0.5">30万円ほど高い</span>可能性があります。</p>
-                                     <span className="absolute -left-8 bottom-0 text-[10px] text-white">既読<br/>10:05</span>
+                             <div className="self-end max-w-[85%] mt-1 animate-fade-in-up delay-300">
+                                <div className="bg-[#85e249] p-2.5 rounded-2xl rounded-tr-none shadow-sm text-xs leading-relaxed text-black relative text-left">
+                                     <p className="mb-0.5 font-bold">診断結果:</p>
+                                     <p className="leading-tight">拝見しました。相場より<br/><span className="font-bold text-red-600 bg-white/50 px-1 rounded inline-block my-0.5">30万円ほど高い</span><br/>可能性があります。</p>
+                                     <span className="absolute -left-6 bottom-0 text-[8px] text-white opacity-80">既読<br/>10:05</span>
                                 </div>
                              </div>
 

@@ -243,6 +243,11 @@ app.get('/service-worker.js', (req, res) => {
 app.use('/public', express.static(publicPath));
 app.use(express.static(staticPath));
 
+// 全てのルートをindex.htmlへ（静的ファイルが存在しない場合）
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 // Start the HTTP server
 const server = app.listen(port, () => {
     console.log(`Server listening on port ${port}`);

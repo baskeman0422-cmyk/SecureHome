@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Warning from './components/Warning';
@@ -13,30 +13,67 @@ import Legal from './components/Legal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ContactForm from './components/ContactForm';
 import InterimCTA from './components/InterimCTA';
+import Thanks from './components/Thanks';
+
+type ViewType = 'home' | 'legal' | 'privacy' | 'thanks';
 
 function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'legal' | 'privacy'>('home');
+  // デフォルトのビューを 'home' に戻す
+  const [currentView, setCurrentView] = useState<ViewType>('home');
 
-  const navigateToLegal = () => {
-    setCurrentView('legal');
-    window.scrollTo(0, 0);
-  };
+  // URLのパス（および念のためのクエリ/ハッシュ）に基づいてビューを解決する
+  const resolveView = useCallback(() => {
+    const path = window.location.pathname.replace('/', '');
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash.replace('#/', '').replace('#', '');
+    
+    // パス名が明示的に指定されている場合はそれに従う
+    if (path === 'home') return 'home';
+    if (path === 'legal') return 'legal';
+    if (path === 'privacy') return 'privacy';
+    if (path === 'thanks') return 'thanks';
+    
+    // フォールバック: ハッシュ
+    if (hash === 'thanks') return 'thanks';
+    if (hash === 'legal') return 'legal';
+    if (hash === 'privacy') return 'privacy';
+    
+    // デフォルトを 'home' に設定
+    return 'home';
+  }, []);
 
-  const navigateToPrivacy = () => {
-    setCurrentView('privacy');
-    window.scrollTo(0, 0);
-  };
+  useEffect(() => {
+    // 初回ロード時の判定
+    setCurrentView(resolveView());
 
-  const navigateToHome = () => {
-    setCurrentView('home');
-    if (window.location.hash === '') {
-        window.scrollTo(0, 0);
+    // ブラウザの「戻る」「進む」を検知
+    const handlePopState = () => {
+      setCurrentView(resolveView());
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [resolveView]);
+
+  // ナビゲーション関数
+  const navigateTo = (view: ViewType) => {
+    setCurrentView(view);
+    
+    const newPath = view === 'home' ? '/' : `/${view}`;
+    
+    if (window.location.pathname !== newPath) {
+      window.history.pushState({ view }, '', newPath);
     }
+    window.scrollTo(0, 0);
   };
+
+  const navigateToLegal = () => navigateTo('legal');
+  const navigateToPrivacy = () => navigateTo('privacy');
+  const navigateToHome = () => navigateTo('home');
 
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans antialiased" id="root">
-      <Header onNavigateHome={() => setCurrentView('home')} />
+      <Header onNavigateHome={navigateToHome} />
       
       <main>
         {currentView === 'home' && (
@@ -58,12 +95,10 @@ function App() {
             
             <Flow />
             
-            {/* Selection UI for LINE or Contact Form */}
             <div id="selection-area">
                <InterimCTA />
             </div>
 
-            {/* Contact Form above FAQ as requested */}
             <ContactForm onPrivacyClick={navigateToPrivacy} />
             <FAQ />
           </>
@@ -75,6 +110,10 @@ function App() {
 
         {currentView === 'privacy' && (
           <PrivacyPolicy onBack={navigateToHome} />
+        )}
+
+        {currentView === 'thanks' && (
+          <Thanks onBack={navigateToHome} />
         )}
       </main>
 
